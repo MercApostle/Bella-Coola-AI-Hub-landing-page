@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --gold-primary: #d4af37;
+  --gold-light: #f4d56f;
+  --gold-dark: #aa8a2e;
+  --black: #000000;
+  --transition-speed: 250ms;
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black text-gold-100 font-sans;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, #000000 0%, #0a0a0a 100%);
+}
+
+/* Smooth scrolling for all anchor links */
+a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-gold font-bold leading-tight;
+  letter-spacing: 0.05em;
+}
+
+p {
+  @apply leading-relaxed text-gold-100;
+}
+
+/* Form Elements - Gold Theme */
+input[type="email"],
+textarea {
+  @apply bg-black-800 border-2 border-gold-dark/30 text-gold-100 rounded-md px-4 py-3;
+  @apply focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold;
+  @apply transition-all duration-200;
+  background: rgba(20, 20, 20, 0.8);
+}
+
+input[type="email"]::placeholder,
+textarea::placeholder {
+  @apply text-gold-dark/50;
+}
+
+input[type="email"]:focus,
+textarea:focus {
+  background: rgba(20, 20, 20, 1);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Checkbox - Gold Theme */
+input[type="checkbox"] {
+  @apply w-5 h-5 bg-black-800 border-2 border-gold-dark/30 rounded;
+  @apply focus:ring-2 focus:ring-gold;
+  cursor: pointer;
+  accent-color: var(--gold-primary);
+}
+
+/* Buttons - Luxury Gold */
+button {
+  @apply font-semibold uppercase tracking-wider;
+  @apply transition-all duration-200;
+  cursor: pointer;
+  position: relative;
+}
+
+button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+/* Utility Classes */
+.section-container {
+  @apply max-w-4xl mx-auto px-6 py-16 md:py-24;
+}
+
+.law-section {
+  @apply border-t border-gold-dark/20;
+  position: relative;
+}
+
+.law-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+}
+
+/* Gold Accent Line */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+  margin: 2rem 0;
+}
+
+/* Toast Notification Styles - Gold */
+.toast {
+  @apply fixed bottom-8 right-8 px-6 py-4 rounded-lg shadow-gold-lg;
+  @apply text-gold-100 animate-in slide-in-from-bottom-5 duration-300;
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.95));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  z-index: 1000;
+}
+
+.toast.success {
+  @apply border-gold/50;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.toast.error {
+  @apply border-red-500/50;
+}
+
+/* Animations */
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: animate-in 0.3s ease-out;
+}
+
+.slide-in-from-bottom-5 {
+  animation: slide-in-from-bottom 0.3s ease-out;
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Gold Glow Effect */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.1);
+}
+
+.gold-glow-strong {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.2);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, opacity, box-shadow;
+  transition-duration: var(--transition-speed);
+  transition-timing-function: ease-in-out;
+}
+
+/* Prevent transition on transform */
+*:not(.animate-transform) {
+  transition-property: color, background-color, border-color, opacity, box-shadow;
+}
+
+/* Selection Color - Gold */
+::selection {
+  background-color: rgba(212, 175, 55, 0.3);
+  color: #f4d56f;
+}
