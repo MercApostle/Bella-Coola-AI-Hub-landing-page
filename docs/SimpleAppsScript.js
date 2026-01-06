@@ -17,7 +17,7 @@ function doPost(e) {
     
     if (data.formType === 'booking') {
       // Logic for Booking/Lead Capture
-      var sheet = ss.getSheetByName("Bookings") || ss.insertSheet("Bookings");
+      var sheet = ss.getSheetByName("contact") || ss.insertSheet("contact");
       
       // Ensure headers if empty
       if (sheet.getLastRow() === 0) {
