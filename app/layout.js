@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Image from 'next/image'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
         <main className="relative z-0 pt-24">
           {children}
         </main>
+        <SpeedInsights />
       </body>
     </html>
   )
