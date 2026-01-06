@@ -34,7 +34,7 @@ function doPost(e) {
       
     } else {
       // Default Logic for Questionnaire
-      var sheet = ss.getSheetByName("Submissions") || ss.getSheets()[0];
+      var sheet = ss.getSheetByName("Questionnaire") || ss.getSheets()[0];
       
       // Ensure headers if empty
       if (sheet.getLastRow() === 0) {
