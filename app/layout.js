@@ -25,18 +25,32 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         {/* Logo Header */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gold-dark/20">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gold-dark/20 transition-all duration-300">
           <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            {/* Logo and Title */}
             <div className="flex items-center gap-4">
               <Image 
                 src="/logo.jpg" 
                 alt="Bella Coola AI Hub" 
                 width={120}
                 height={120}
-                className="h-16 w-auto"
+                className="h-14 w-auto rounded-sm border border-gold/10"
                 priority
               />
+              <span className="text-xl md:text-2xl font-black uppercase tracking-tighter text-gold text-shadow-sm hidden sm:block">
+                Bella Coola AI Hub
+              </span>
             </div>
+
+            {/* Navigation */}
+            <nav>
+              <a 
+                href="#contact" 
+                className="px-6 py-2 border-2 border-gold/50 text-gold font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-black transition-all duration-300 rounded-sm"
+              >
+                Contact
+              </a>
+            </nav>
           </div>
         </header>
 
