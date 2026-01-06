@@ -67,16 +67,16 @@ export default function BookingForm() {
         
         <div className="grid md:grid-cols-2 gap-4 mt-8">
           <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/PLACEHOLDER_INTRO" // Placeholder
+            href="https://calendar.app.google/fGiCsdACuRUBd6wT6"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 px-6 py-4 bg-gold text-black font-black uppercase tracking-tighter hover:bg-white transition-colors rounded-sm"
           >
             <Calendar className="w-5 h-5" />
-            20-Min Intro Call
+            15-Min Intro Call
           </a>
           <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/PLACEHOLDER_DEPTH" // Placeholder
+            href="https://calendar.app.google/TvKzUxiV4DsL7aXt7"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 px-6 py-4 border-2 border-gold text-gold font-black uppercase tracking-tighter hover:bg-gold hover:text-black transition-colors rounded-sm"
