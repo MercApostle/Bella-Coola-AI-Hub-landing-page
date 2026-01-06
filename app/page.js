@@ -1,15 +1,20 @@
+import dynamic from 'next/dynamic'
 import Hero from '../components/Hero'
-import AlignmentStatement from '../components/AlignmentStatement'
-import WhatYouReceive from '../components/WhatYouReceive'
-import HowToUse from '../components/HowToUse'
-import HowThisWorks from '../components/HowThisWorks'
-import EmailConsentGate from '../components/EmailConsentGate'
-import LawSection from '../components/LawSection'
-import OptionalDeepening from '../components/OptionalDeepening'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
 import { lawsData } from '../lib/lawsData'
 import { UserProvider } from '../lib/UserContext'
+
+// Standard sections - keep static for SEO and initial paint
+import AlignmentStatement from '../components/AlignmentStatement'
+
+// Dynamic sections - lazy load as user scrolls or after initial load
+const WhatYouReceive = dynamic(() => import('../components/WhatYouReceive'), { ssr: true })
+const HowToUse = dynamic(() => import('../components/HowToUse'), { ssr: true })
+const HowThisWorks = dynamic(() => import('../components/HowThisWorks'), { ssr: true })
+const EmailConsentGate = dynamic(() => import('../components/EmailConsentGate'), { ssr: true })
+const LawSection = dynamic(() => import('../components/LawSection'), { ssr: true })
+const OptionalDeepening = dynamic(() => import('../components/OptionalDeepening'), { ssr: true })
+const Contact = dynamic(() => import('../components/Contact'), { ssr: true })
+const Footer = dynamic(() => import('../components/Footer'), { ssr: true })
 
 export default function Home() {
   return (
