@@ -47,6 +47,10 @@ export default function LawSection({ law }) {
       const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec'
       
       console.log('📤 Submitting to:', APPS_SCRIPT_URL)
+      console.log('🔍 FormData state:', formData)
+      console.log('🔍 FormData.q1:', formData.q1)
+      console.log('🔍 FormData.q2:', formData.q2)
+      console.log('🔍 FormData.q3:', formData.q3)
 
       // Prepare simple payload
       const payload = {
@@ -60,6 +64,7 @@ export default function LawSection({ law }) {
       }
       
       console.log('📦 Data:', payload)
+      console.log('📦 Payload keys:', Object.keys(payload))
 
       // Submit to Apps Script (mode: no-cors is required for Apps Script)
       await fetch(APPS_SCRIPT_URL, {
@@ -207,9 +212,9 @@ export default function LawSection({ law }) {
               disabled={isSubmitting || !isGatePassed}
               className="px-8 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-all duration-200 bg-black-800 border-2 border-gold-dark/30 text-gold-100 hover:border-gold hover:bg-gold/10"
               style={{
-                borderColor: isSubmitting ? law.color : '',
-                backgroundColor: isSubmitting ? law.color + '20' : '',
-                color: isSubmitting ? law.color : '',
+                borderColor: isSubmitting ? '#d4af37' : '',
+                backgroundColor: isSubmitting ? 'rgba(212, 175, 55, 0.2)' : '',
+                opacity: isSubmitting ? 0.8 : 1,
               }}
               onMouseEnter={(e) => {
                 if (!isSubmitting) {
