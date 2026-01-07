@@ -13,7 +13,6 @@ const HowThisWorks = dynamic(() => import('../components/HowThisWorks'), { ssr: 
 const EmailConsentGate = dynamic(() => import('../components/EmailConsentGate'), { ssr: true })
 const LawSection = dynamic(() => import('../components/LawSection'), { ssr: true })
 const OptionalDeepening = dynamic(() => import('../components/OptionalDeepening'), { ssr: true })
-const Contact = dynamic(() => import('../components/Contact'), { ssr: true })
 const Footer = dynamic(() => import('../components/Footer'), { ssr: true })
 
 export default function Home() {
@@ -44,9 +43,6 @@ export default function Home() {
 
       {/* Optional Deepening */}
       <OptionalDeepening />
-
-      {/* Contact */}
-      <Contact />
 
       {/* Footer */}
       <Footer />

@@ -9,7 +9,6 @@ export default function EmailConsentGate() {
   const [localConsent, setLocalConsent] = useState(hasConsented)
   const [honeypot, setHoneypot] = useState('')
   const [isSaving, setIsSaving] = useState(false)
-  const [showSuccess, setShowSuccess] = useState(isGatePassed)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -32,21 +31,25 @@ export default function EmailConsentGate() {
     updateEmail(localEmail)
     updateConsent(localConsent)
 
-    // Show success
-    setShowSuccess(true)
     setIsSaving(false)
 
-    // Smooth scroll to first law section after a brief delay
+    // Smooth scroll to first law section (Mentalism)
+    // We target the ID logic directly to ensure it goes to the right place
     setTimeout(() => {
       const firstLaw = document.getElementById('mentalism')
       if (firstLaw) {
-        firstLaw.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        const offset = 100 // Adjust for header height
+        const elementPosition = firstLaw.getBoundingClientRect().top + window.scrollY
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: 'smooth'
+        })
       }
-    }, 800)
+    }, 100)
   }
 
   // If already completed, show success state
-  if (showSuccess && isGatePassed) {
+  if (isGatePassed) {
     return (
       <section id="email-consent-gate" className="section-container">
         <div className="max-w-2xl mx-auto">
