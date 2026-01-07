@@ -36,9 +36,14 @@ export default function RootLayout({ children }) {
                 className="h-16 w-auto"
                 priority
               />
-              <h1 className="text-2xl md:text-3xl font-bold uppercase tracking-wider text-gold">
-                The <span className="text-white">7 Laws</span> of Success
-              </h1>
+              <div className="flex flex-col items-center">
+                <h1 className="text-2xl md:text-3xl font-bold uppercase tracking-wider text-gold">
+                  The <span className="text-white">7 Laws</span> of Success
+                </h1>
+                <p className="text-xs md:text-sm text-gold-dark/80 tracking-wide uppercase">
+                  &ldquo;In All Aspects of Life and Creation&rdquo;
+                </p>
+              </div>
             </div>
           </div>
         </header>
