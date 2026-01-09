@@ -7,6 +7,7 @@ import { UserProvider } from '../lib/UserContext'
 import AlignmentStatement from '../components/AlignmentStatement'
 
 // Dynamic sections - lazy load as user scrolls or after initial load
+const WhoIsThisFor = dynamic(() => import('../components/WhoIsThisFor'), { ssr: true })
 const WhatYouReceive = dynamic(() => import('../components/WhatYouReceive'), { ssr: true })
 const HowToUse = dynamic(() => import('../components/HowToUse'), { ssr: true })
 const HowThisWorks = dynamic(() => import('../components/HowThisWorks'), { ssr: true })
@@ -23,6 +24,9 @@ export default function Home() {
 
       {/* Alignment Statement */}
       <AlignmentStatement />
+
+      {/* Who Is This For */}
+      <WhoIsThisFor />
 
       {/* What You'll Receive */}
       <WhatYouReceive />
