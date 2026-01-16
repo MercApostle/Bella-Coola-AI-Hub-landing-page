@@ -4,6 +4,7 @@ import { lawsData } from '../lib/lawsData'
 import { UserProvider } from '../lib/UserContext'
 
 // Standard sections - keep static for SEO and initial paint
+import LawsOwnership from '../components/LawsOwnership'
 import AlignmentStatement from '../components/AlignmentStatement'
 
 // Dynamic sections - lazy load as user scrolls or after initial load
@@ -21,6 +22,9 @@ export default function Home() {
     <UserProvider>
       {/* Hero Section - includes STOP animation */}
       <Hero />
+
+      {/* Laws Ownership */}
+      <LawsOwnership />
 
       {/* Alignment Statement */}
       <AlignmentStatement />
