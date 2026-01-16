@@ -16,6 +16,9 @@ export const metadata = {
   authors: [{ name: 'Bella Coola AI Hub' }],
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#000000', // Pure black
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({ children }) {
