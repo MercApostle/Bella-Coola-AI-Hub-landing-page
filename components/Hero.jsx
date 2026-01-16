@@ -1,13 +1,28 @@
 import StopAnimation from './StopAnimation'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section id="hero" className="section-container min-h-screen flex items-center justify-center relative">
+    <section id="hero" className="section-container min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background Billboard Image */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/branding-billboard.jpg"
+          alt="Bella Coola AI Hub"
+          fill
+          className="object-cover opacity-20"
+          priority
+          quality={90}
+        />
+        {/* Dark gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
+      </div>
+
       {/* STOP Animation */}
       <StopAnimation />
 
       {/* Hero Content */}
-      <div className="max-w-3xl mx-auto text-center space-y-8">
+      <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-widest text-white leading-tight">
           Take your time with this.
         </h1>

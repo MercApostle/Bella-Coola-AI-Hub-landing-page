@@ -1,7 +1,22 @@
+import Image from 'next/image'
+
 export default function Footer() {
   return (
-    <footer className="border-t border-gold-dark/20 py-12 mt-24">
-      <div className="section-container">
+    <footer className="relative border-t border-gold-dark/20 py-12 mt-24 overflow-hidden">
+      {/* Stationery Background */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/branding-stationery.jpg"
+          alt="Bella Coola brand materials"
+          fill
+          className="object-cover opacity-5"
+          quality={75}
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/90" />
+      </div>
+
+      <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           {/* Privacy Statement */}
           <p className="text-sm text-gold-dark">

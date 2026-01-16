@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function WhoIsThisFor() {
   return (
     <section className="relative py-20 lg:py-32 bg-gradient-to-b from-black via-neutral-950 to-black overflow-hidden">
@@ -24,49 +26,65 @@ export default function WhoIsThisFor() {
           </p>
         </div>
 
-        {/* Criteria Section */}
-        <div className="max-w-5xl mx-auto">
-          <p className="text-lg lg:text-xl text-neutral-300 mb-10 text-center">
-            It&apos;s for people who:
-          </p>
+        {/* Main Content - Image + Criteria */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto mb-16">
+          {/* Professional Image */}
+          <div className="relative h-[400px] lg:h-[600px] rounded-2xl overflow-hidden border border-amber-900/30 shadow-[0_0_50px_rgba(217,119,6,0.2)]">
+            <Image 
+              src="/branding-professional.png"
+              alt="Professional using Bella Coola AI Hub"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            {/* Subtle overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          </div>
 
-          {/* Criteria Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {criteria.map((item, index) => (
-              <div
-                key={index}
-                className="group relative bg-gradient-to-br from-neutral-900 to-black border border-amber-900/30 rounded-xl p-6 transition-all duration-300 hover:border-amber-600/50 hover:shadow-[0_0_30px_rgba(217,119,6,0.15)]"
-              >
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-600/0 to-amber-900/0 group-hover:from-amber-600/5 group-hover:to-amber-900/5 rounded-xl transition-all duration-300" />
-                
-                {/* Number indicator */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-sm font-bold text-black shadow-lg">
-                  {index + 1}
+          {/* Criteria Section */}
+          <div>
+            <p className="text-lg lg:text-xl text-neutral-300 mb-8">
+              It&apos;s for people who:
+            </p>
+
+            {/* Criteria List */}
+            <div className="space-y-4">
+              {criteria.map((item, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-gradient-to-br from-neutral-900 to-black border border-amber-900/30 rounded-xl p-4 transition-all duration-300 hover:border-amber-600/50 hover:shadow-[0_0_30px_rgba(217,119,6,0.15)]"
+                >
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-600/0 to-amber-900/0 group-hover:from-amber-600/5 group-hover:to-amber-900/5 rounded-xl transition-all duration-300" />
+                  
+                  {/* Number indicator */}
+                  <div className="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-xs font-bold text-black shadow-lg">
+                    {index + 1}
+                  </div>
+
+                  <div className="relative z-10 flex items-start pl-4">
+                    {/* Checkmark icon */}
+                    <svg 
+                      className="w-5 h-5 text-amber-500 mr-3 mt-0.5 flex-shrink-0" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2.5} 
+                        d="M5 13l4 4L19 7" 
+                      />
+                    </svg>
+
+                    <p className="text-neutral-200 leading-relaxed">
+                      {item}
+                    </p>
+                  </div>
                 </div>
-
-                <div className="relative z-10 flex items-start">
-                  {/* Checkmark icon */}
-                  <svg 
-                    className="w-6 h-6 text-amber-500 mr-4 mt-1 flex-shrink-0" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2.5} 
-                      d="M5 13l4 4L19 7" 
-                    />
-                  </svg>
-
-                  <p className="text-neutral-200 text-lg leading-relaxed">
-                    {item}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
