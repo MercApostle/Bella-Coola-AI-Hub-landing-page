@@ -47,18 +47,18 @@ export default function WhatYouReceive() {
             </div>
           </div>
 
-          {/* Device Mockup Image */}
-          <div className="relative h-[400px] lg:h-[500px] order-1 lg:order-2">
+          {/* AI Hub Services Image */}
+          <div className="relative h-[500px] lg:h-[600px] order-1 lg:order-2">
             <div className="relative w-full h-full rounded-2xl overflow-hidden border border-gold-dark/30 shadow-[0_0_60px_rgba(212,175,55,0.3)]">
               <Image 
-                src="/branding-devices.png"
-                alt="Bella Coola AI Hub on multiple devices"
+                src="/branding-ai-hub-services.jpg"
+                alt="Bella Coola AI Hub connected services"
                 fill
-                className="object-contain p-6"
+                className="object-contain p-4"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </div>
             
             {/* Floating accent */}
